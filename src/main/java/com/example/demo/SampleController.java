@@ -12,11 +12,16 @@ public class SampleController {
 
     }
 
-    @GetMapping("message")
-    @ResponseBody
+    @GetMapping("/message")
+    //@ResponseBody @RestController라 명시안해도 됨
     public String message(@RequestBody String body){
         return body;
 
+    }
+
+    @GetMapping("/jsonMessage")
+    public Person jsonMessage(@RequestBody Person person){
+        return person;
     }
 
 }
